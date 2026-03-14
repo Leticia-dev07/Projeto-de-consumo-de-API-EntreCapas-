@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Busca de Livros</title>
+  <!-- link de refencia do css para o html -->
+    <link rel="stylesheet" href="style.css">
+  <!-- vou utilizar api de busca de livros open library -->
+
+</head>
+<body>
+    <!-- cabeçalho -->
+    <header>
+        <h1>EntreCapas</h1>
+        <p class="descricao">
+        <b>Busque seus livros preferidos!</b> <br>
+        Digite o nome de um livro para visualizar informações como título,
+        autor e ano de publicação de forma rápida e simples.
+        </p>
+    </header>
+
+    <main>
+
+      <div class="container">
+<!-- área de busca (searchinput para o js pegar o conteudo escrito) o placehold colocado para auxiliar para o user a difgitar dentro -->
+        <div  class="busca">
+          <input 
+          type="text"
+          id="searchInput"
+          placeholder="Digite o nome do livro"
+          />
+
+        <button onclick="buscarLivros()"> Buscar</button>
+        </div>
+ <!-- área onde os resultados aparecem -->
+       <section id="resultado">
+       </section>
+      </div>
+    </main>
+
+<!-- rodape -->
+    <footer>
+      <p>Projeto de consumo de API desenvolvido em HTML, CSS e JavaScript.</p>
+      <p>© 2026 Leticia Gabrielle Claudino da Paz</p>
+    </footer>
+<!-- conexão com o javascript -->
+<script src="script.js"></script>
+    
+</body>
+</html>

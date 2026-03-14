@@ -1,0 +1,207 @@
+/* removeção das margens padrão do navegador para facilitar UWU */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+/* estilo da página geral */
+body{
+font-family: Arial, Helvetica, sans-serif;
+background:#f4f4f4;
+color:#333;
+
+/* mantém footer sempre no final */
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+/* main ocupa o espaço restante */
+main{
+flex:1;
+}
+
+/* topinho da página com imagem literaria */
+header{
+
+text-align:center;
+padding:40px 20px;
+
+/* imagem de fundo remetente a livros pela experiencia do user gosto*/
+background-image:
+linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+url("img/fundo-livros.png");
+
+/* faz a imagem ocupar toda área */
+background-size:cover;
+
+/* centralização da imagem */
+background-position:center;
+
+/* linha decorativa */
+border-bottom:3px solid #50003f;
+}
+
+/* titulo */
+header h1{
+font-size:28px;
+margin-bottom:10px;
+color:#50003f;
+}
+
+/* texto descritivo organizado */
+.descricao{
+font-size:14px;
+line-height:1.5;
+max-width:500px;
+margin:auto;
+color:#444;
+}
+
+/* container principal */
+.container{
+max-width:500px;
+margin:auto;
+margin-top:20px;
+}
+
+/* Area de busca */
+.busca{
+display:flex;
+flex-direction:column;
+gap:10px;
+margin-bottom:20px;
+}
+
+/* input local para escrita */
+.busca input{
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:16px;
+outline:none;
+}
+
+/* foco no input */
+.busca input:focus{
+border-color:#4CAF50;
+}
+
+/* Botão de busca */
+.busca button{
+
+padding:12px;
+
+border:none;
+border-radius:8px;
+
+background:#4CAF50;
+color:white;
+
+font-size:16px;
+cursor:pointer;
+
+/* animação suave */
+transition:0.3s;
+}
+
+/* efeito hover */
+.busca button:hover{
+background:#306e33;
+}
+
+/* efeito clique */
+.busca button:active{
+transform:scale(0.97);
+}
+
+/* area de resultados */
+#resultado{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+/* card de visualização de cada livro */
+.livro{
+background:white;
+padding:15px;
+border-radius:10px;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+transition:0.2s;
+}
+
+/* efeito ao passar o mouse */
+.livro:hover{
+transform:translateY(-3px);
+box-shadow:0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* titulo do livro */
+.livro h3{
+font-size:18px;
+margin-bottom:8px;
+color:#50003f;
+}
+
+/* texto do livro */
+.livro p{
+font-size:14px;
+margin-bottom:4px;
+}
+
+/* rodape */
+footer{
+margin-top:40px;
+padding:30px;
+
+text-align:center;
+font-size:13px;
+
+background-image:
+linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+url("img/fundo-livros.png");
+
+background-size:cover;
+background-position:center;
+
+border-top:3px solid #50003f;
+}
+
+/* responsividade tablet */
+@media (min-width:768px){
+
+.container{
+max-width:700px;
+}
+
+/* livros lado a lado */
+#resultado{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+}
+
+/* responsividade celular */
+@media (max-width:480px){
+
+header h1{
+font-size:22px;
+}
+
+.descricao{
+font-size:13px;
+}
+
+.busca input{
+font-size:14px;
+}
+
+.busca button{
+font-size:14px;
+}
+
+}
