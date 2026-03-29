@@ -36,6 +36,7 @@
           />
 
         <button onclick="buscarLivros()"> Buscar</button>
+        <button onclick="buscarPorVoz()">🎤Busca por microfone</button>
         </div>
  <!-- área onde os resultados aparecem -->
        <section id="resultado">
@@ -54,7 +55,7 @@
 <!-- registro do service worker -->
 <script>
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/service-worker.js")
+    navigator.serviceWorker.register("service-worker.js")
       .then(() => console.log("Service Worker registrado"))
       .catch((err) => console.log("Erro ao registrar:", err));
   }

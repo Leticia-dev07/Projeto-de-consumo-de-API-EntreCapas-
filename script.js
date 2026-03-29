@@ -10,7 +10,7 @@ async function buscarLivros() {
 
     try {
         // faz uma requisição para a API de livros  converte a resposta da API para formato JSON
-        const response = await fetch(`https://openlibrary.org/search.json?q=${input}`);
+        const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(input)}`);
         const data = await response.json();
 
         // limpeza na  área de resultados antes de mostrar novos livros para usuário UWU
@@ -48,4 +48,42 @@ async function buscarLivros() {
 
     }
 
+}
+function buscarPorVoz() {
+
+    alert("clicou no microfone"); //  AQUI DENTRO
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+        alert("Seu navegador não suporta reconhecimento de voz ");
+        return;
+    }
+
+    const recognition = new SpeechRecognition();
+
+    recognition.lang = "pt-BR";
+    recognition.start();
+
+    recognition.onstart = function () {
+        console.log("🎤 Ouvindo...");
+    };
+
+    recognition.onresult = function (event) {
+    let texto = event.results[0][0].transcript;
+    // limpeza do texto
+    texto = texto.trim().toLowerCase();
+    texto = texto.replace(/[.,!?]/g, "");
+
+    // joga no input
+    document.getElementById("searchInput").value = texto;
+
+    // chama busca
+    buscarLivros();
+    };
+
+    recognition.onerror = function (event) {
+        console.log("Erro:", event.error);
+        alert("Erro ao usar microfone ");
+    };
 }
