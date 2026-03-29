@@ -1,4 +1,4 @@
-const CACHE_NAME = "entrecapas-v1";
+const CACHE_NAME = "entrecapas-v3";
 
 const urlsToCache = [
   "/",

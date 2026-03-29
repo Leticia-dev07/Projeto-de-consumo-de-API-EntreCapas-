@@ -6,7 +6,7 @@
   "orientation": "portrait",
   "scope": "/",
   "short_name": "EntreCapas",
-  "start_url": "/index.html",
+  "start_url": "./index.html",
   "theme_color": "#50003f",
   "description": "Aplicativo web para busca de livros utilizando a API Open Library. Permite pesquisar títulos de forma rápida e intuitiva, exibindo informações como nome do livro, autor e ano de publicação. Desenvolvido com foco em usabilidade mobile, oferecendo uma experiência simples, leve e eficiente para descobrir novas leituras.",
   "id": "com.leticia.entrecapas",
