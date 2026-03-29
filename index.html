@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Busca de livros com Open Library">
+    <meta name="theme-color" content="#50003f">
     <title>App Busca de Livros</title>
   <!-- link de refencia do css para o html -->
     <link rel="stylesheet" href="style.css">
+    <!-- referencia para o manifest.json para transformar num pwa-->
+    <link rel="manifest" href="manifest.json">
   <!-- vou utilizar api de busca de livros open library -->
 
 </head>
@@ -46,6 +50,15 @@
     </footer>
 <!-- conexão com o javascript -->
 <script src="script.js"></script>
+
+<!-- registro do service worker -->
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/service-worker.js")
+      .then(() => console.log("Service Worker registrado"))
+      .catch((err) => console.log("Erro ao registrar:", err));
+  }
+</script>
     
 </body>
 </html>
